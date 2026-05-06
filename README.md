@@ -4,21 +4,15 @@ MCP server for local LLMs. Single Rust binary that bridges Claude Desktop, Curso
 
 ## Install
 
+### One-liner (macOS, Linux)
+
+    curl -sSfL https://raw.githubusercontent.com/ilovepixelart/loco/main/install.sh | sh
+
+Auto-detects your platform, downloads the latest release binary, and drops it at `/usr/local/bin/loco`. Set `LOCO_INSTALL_DIR=~/.local/bin` to install without sudo.
+
 ### Cargo
 
     cargo install --git https://github.com/ilovepixelart/loco
-
-### Pre-built binary
-
-Grab the binary for your platform from the [latest release](https://github.com/ilovepixelart/loco/releases/latest):
-
-- `loco-aarch64-apple-darwin` — macOS Apple Silicon
-- `loco-x86_64-apple-darwin` — macOS Intel
-- `loco-x86_64-unknown-linux-musl` — Linux x86_64
-- `loco-aarch64-unknown-linux-musl` — Linux ARM64
-- `loco-x86_64-pc-windows-msvc.exe` — Windows
-
-Then `chmod +x` and move it onto your `PATH`.
 
 ### Build from source
 
@@ -26,6 +20,10 @@ Then `chmod +x` and move it onto your `PATH`.
     cd loco
     cargo build --release
     ./target/release/loco --help
+
+### Windows
+
+Download `loco-x86_64-pc-windows-msvc.exe` from the [latest release](https://github.com/ilovepixelart/loco/releases/latest) and put it on your `PATH`.
 
 ### Docker
 
