@@ -1,0 +1,22 @@
+{
+  "name": "loco-mcp",
+  "version": "1.0.0",
+  "description": "MCP server for local LLMs — Ollama, LM Studio, llama.cpp",
+  "type": "module",
+  "license": "MIT",
+  "keywords": ["mcp", "ollama", "lmstudio", "llamacpp", "llm", "local-ai"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ilovepixelart/loco"
+  },
+  "bin": {
+    "loco": "./bin/run.js"
+  },
+  "scripts": {
+    "postinstall": "node scripts/postinstall.js"
+  },
+  "files": [
+    "bin/",
+    "scripts/"
+  ]
+}
