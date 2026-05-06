@@ -6,7 +6,7 @@ MCP server for local LLMs. Single Rust binary that bridges Claude Desktop, Curso
 
 ### npm (pre-built binary, all platforms)
 
-    npm install -g loco-mcp
+    npm install -g @ilovepixelart/loco
 
 ### Cargo
 

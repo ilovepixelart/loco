@@ -45,13 +45,16 @@ impl BackendRegistry {
     }
 
     pub async fn online_names(&self) -> Vec<&'static str> {
-        let mut out = vec![];
-        for b in &self.backends {
-            if self.is_online(b).await {
-                out.push(b.name);
-            }
-        }
-        out
+        let (a, b, c) = tokio::join!(
+            self.is_online(&self.backends[0]),
+            self.is_online(&self.backends[1]),
+            self.is_online(&self.backends[2]),
+        );
+        [a, b, c]
+            .into_iter()
+            .zip(&self.backends)
+            .filter_map(|(online, backend)| online.then_some(backend.name))
+            .collect()
     }
 
     pub async fn is_online(&self, b: &BackendConfig) -> bool {

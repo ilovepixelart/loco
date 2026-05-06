@@ -1,5 +1,5 @@
 {
-  "name": "loco-mcp",
+  "name": "@ilovepixelart/loco",
   "version": "1.0.0",
   "description": "MCP server for local LLMs — Ollama, LM Studio, llama.cpp",
   "type": "module",

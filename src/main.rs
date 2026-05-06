@@ -51,7 +51,7 @@ async fn handle(req: Request, registry: &BackendRegistry) -> Option<Value> {
             Some(ok(
                 &id,
                 &json!({
-                    "protocolVersion": "2024-11-05",
+                    "protocolVersion": "2025-06-18",
                     "capabilities":    { "tools": {} },
                     "serverInfo":      { "name": "loco", "version": env!("CARGO_PKG_VERSION") }
                 }),
