@@ -55,7 +55,7 @@ jobs:
           retention-days: 1
 
   release:
-    name: Publish to GitHub + npm
+    name: Publish GitHub Release
     needs: build
     runs-on: ubuntu-latest
     steps:
@@ -71,30 +71,6 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           files: artifacts/*
-
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          registry-url: https://registry.npmjs.org
-
-      - name: Sync version to npm package
-        env:
-          TAG: ${{ github.ref_name }}
-        run: |
-          VERSION="${TAG#v}"
-          node -e "
-            const fs = require('fs');
-            const pkg = JSON.parse(fs.readFileSync('npm/package.json'));
-            pkg.version = process.env.VERSION;
-            fs.writeFileSync('npm/package.json', JSON.stringify(pkg, null, 2));
-          "
-
-      - name: Publish to npm
-        run: npm publish --access public
-        working-directory: npm
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
   docker:
     name: Publish Docker image to GHCR

@@ -4,13 +4,21 @@ MCP server for local LLMs. Single Rust binary that bridges Claude Desktop, Curso
 
 ## Install
 
-### npm (pre-built binary, all platforms)
-
-    npm install -g @ilovepixelart/loco
-
 ### Cargo
 
     cargo install --git https://github.com/ilovepixelart/loco
+
+### Pre-built binary
+
+Grab the binary for your platform from the [latest release](https://github.com/ilovepixelart/loco/releases/latest):
+
+- `loco-aarch64-apple-darwin` — macOS Apple Silicon
+- `loco-x86_64-apple-darwin` — macOS Intel
+- `loco-x86_64-unknown-linux-musl` — Linux x86_64
+- `loco-aarch64-unknown-linux-musl` — Linux ARM64
+- `loco-x86_64-pc-windows-msvc.exe` — Windows
+
+Then `chmod +x` and move it onto your `PATH`.
 
 ### Build from source
 
